@@ -1,9 +1,11 @@
 #include <iostream>
 #include "SDL.h"
 #include "Snake.h"
+#include "Utils.h"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
+#define SEGMENT_RADIUS 10
 bool isRunning;
 Snake player;
 SDL_Renderer* renderer;
@@ -23,7 +25,7 @@ void Init()
 		renderer = SDL_CreateRenderer(window,
 			-1,
 			SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-	player = Snake(0, 0);
+	player = Snake(0, 0, SEGMENT_RADIUS);
 }
 
 void ProcessInput()
@@ -103,6 +105,7 @@ void Render()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	for (int i = 0; i < player.GetSegmentsCount(); i++)
 	{
+		DrawCircle(renderer, player.GetSegment(i).x, player.GetSegment(i).y, SEGMENT_RADIUS);
 		SDL_RenderDrawPoint(renderer, player.GetSegment(i).x, player.GetSegment(i).y);
 	}
 	SDL_RenderPresent(renderer);

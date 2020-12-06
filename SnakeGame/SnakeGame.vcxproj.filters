@@ -24,12 +24,18 @@
     <ClCompile Include="Snake.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="Snake.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

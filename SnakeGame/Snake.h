@@ -11,7 +11,7 @@ enum Direction
 class Snake : public GameObject  {
 public:
 	Snake();
-	Snake(int x, int y);
+	Snake(int x, int y, int segmentRadius);
 	void ChangeDirection(Direction dir);
 	int GetSegmentsCount();
 	void AddSegment();
@@ -21,4 +21,5 @@ public:
 private:
 	Direction direction;
 	std::vector<Vector2D> segments;
+	int segmentRadius;
 };
