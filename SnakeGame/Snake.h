@@ -1,13 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include <vector>
-enum Direction
-{
-	UP,
-	RIGHT,
-	DOWN,
-	LEFT
-};
+
 class Snake : public GameObject  {
 public:
 	Snake();
@@ -15,11 +9,13 @@ public:
 	void ChangeDirection(Direction dir);
 	int GetSegmentsCount();
 	void AddSegment();
-	Vector2D GetSegment(int n);
-	void MoveSegment(int n, Vector2D newPos);
+	Transform2D GetSegment(int n);
+	void MoveSegment(int n, Transform2D newPos);
 	Direction GetDirection();
+	void RotateSegment(int i);
 private:
 	Direction direction;
-	std::vector<Vector2D> segments;
+	std::vector<Transform2D> segments;
 	int segmentRadius;
+	std::vector<Transform2D> rotationPoints;
 };

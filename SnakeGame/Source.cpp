@@ -43,19 +43,19 @@ void ProcessInput()
 		if (state[SDL_SCANCODE_ESCAPE]) {
 			isRunning = false;
 		}
-		if (state[SDL_SCANCODE_UP] || state[SDL_SCANCODE_W])
+		if ((state[SDL_SCANCODE_UP] || state[SDL_SCANCODE_W]) && player.GetDirection() != DOWN)
 		{
 			player.ChangeDirection(Direction::UP);
 		}
-		if (state[SDL_SCANCODE_DOWN] || state[SDL_SCANCODE_S])
+		if ((state[SDL_SCANCODE_DOWN] || state[SDL_SCANCODE_S]) && player.GetDirection() != UP)
 		{
 			player.ChangeDirection(Direction::DOWN);
 		}
-		if (state[SDL_SCANCODE_LEFT] || state[SDL_SCANCODE_A])
+		if ((state[SDL_SCANCODE_LEFT] || state[SDL_SCANCODE_A]) && player.GetDirection() != RIGHT)
 		{
 			player.ChangeDirection(Direction::LEFT);
 		}
-		if (state[SDL_SCANCODE_RIGHT] || state[SDL_SCANCODE_D])
+		if ((state[SDL_SCANCODE_RIGHT] || state[SDL_SCANCODE_D]) && player.GetDirection() != LEFT)
 		{
 			player.ChangeDirection(Direction::RIGHT);
 		}
@@ -65,10 +65,23 @@ void ProcessInput()
 
 void Update()
 {
+	for (int i = 1; i < player.GetSegmentsCount(); i++)
+	{
+		if (player.GetSegment(i).rotation != player.GetDirection())
+		{
+			if (((player.GetDirection() == UP || player.GetDirection() == DOWN) && player.GetSegment(i).x == player.GetSegment(i - 1).x) ||
+				((player.GetDirection() == LEFT || player.GetDirection() == RIGHT) && player.GetSegment(i).y == player.GetSegment(i - 1).y))
+			{
+				player.RotateSegment(i);
+				break;
+			}
+				
+		}
+	}
 	for (int i = 0; i < player.GetSegmentsCount(); i++)
 	{
-		Vector2D newPos = player.GetSegment(i);
-		switch (player.GetDirection())
+		Transform2D newPos = player.GetSegment(i);
+		switch (newPos.rotation)
 		{
 		case UP:
 			newPos.y--;

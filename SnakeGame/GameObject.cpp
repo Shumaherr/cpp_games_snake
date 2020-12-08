@@ -8,8 +8,9 @@ GameObject::GameObject(int x, int y)
 	{
 		this->position.x = x;
 		this->position.y = y;
+		this->position.rotation = UP;
 	}
-	Vector2D GameObject::Move(Vector2D deltaMove)
+	Transform2D GameObject::Move(Transform2D deltaMove)
 	{
 		this->position.x += deltaMove.x;
 		this->position.y += deltaMove.y;
