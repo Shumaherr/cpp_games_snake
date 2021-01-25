@@ -24,3 +24,6 @@ public:
 protected:
 	Transform2D position; //Position of object
 };
+inline bool operator==(const Transform2D& left, const Transform2D& right) {
+	return (left.x == right.x) && (left.y == right.y);
+}

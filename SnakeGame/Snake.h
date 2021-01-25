@@ -15,9 +15,12 @@ public:
 	void RotateSegment(int i, Direction dir);
 	std::vector<Transform2D> GetRotationPoints();
 	void RemoveRotationPoint(Transform2D& point);
+	bool CanRotate();
+	void CanRotate(bool can);
 private:
 	Direction direction;
 	std::vector<Transform2D> segments;
 	int segmentRadius;
+	bool canRotate;
 	std::vector<Transform2D> rotationPoints;
 };

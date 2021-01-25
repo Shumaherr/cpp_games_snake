@@ -1,12 +1,13 @@
 #include "GameObject.h"
 #include "Snake.h"
+#include <algorithm>
 
 Snake::Snake()
 {
 }
 
 Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
-		this->direction = Direction::LEFT;
+		direction = Direction::LEFT;
 		Transform2D p1 = { 150,150 }; //TODO Refactor this
 		p1.rotation = LEFT;
 		Transform2D p2 = { 150 + 2 * segmentRadius, 150 };
@@ -25,20 +26,20 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 	}
 	void Snake::ChangeDirection(Direction dir)
 	{
-		this->direction = dir;
-
-		this->rotationPoints.push_back(Transform2D{ this->GetSegment(0).x, this->GetSegment(0).y, dir });
-		this->segments[0].rotation = dir;
+		direction = dir;
+		rotationPoints.push_back(Transform2D{ GetSegment(0).x, GetSegment(0).y, dir });
+		segments[0].rotation = dir;
+		canRotate = false;
 	}
 	int Snake::GetSegmentsCount()
 	{
-		return this->segments.size();
+		return segments.size();
 	}
 
 	void Snake::AddSegment()
 	{
-		Transform2D newP = { segments[segments.size() - 1].x + 2 * this->segmentRadius, segments[segments.size() - 1].y };
-		this->segments.push_back(newP);
+		Transform2D newP = { segments[segments.size() - 1].x + 2 * segmentRadius, segments[segments.size() - 1].y };
+		segments.push_back(newP);
 	}
 
 	Transform2D Snake::GetSegment(int n)
@@ -48,25 +49,35 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 
 	void Snake::MoveSegment(int n, Transform2D newPos)
 	{
-		this->segments[n] = newPos;
+		segments[n] = newPos;
 	}
 
 	Direction Snake::GetDirection()
 	{
-		return this->direction;
+		return direction;
 	}
 
 	void Snake::RotateSegment(int i, Direction dir)
 	{
-		this->segments[i].rotation = dir;
+		segments[i].rotation = dir;
 	}
 
 	std::vector<Transform2D> Snake::GetRotationPoints()
 	{
-		return this->rotationPoints;
+		return rotationPoints;
 	}
 
-	void Snake::RemoveRotationPoint(Transform2D point)
+	void Snake::RemoveRotationPoint(Transform2D& point)
 	{
-		this->rotationPoints.erase(std::remove(this->rotationPoints.begin(), this->rotationPoints.end(), point), this->rotationPoints.end());
+		this->rotationPoints.erase(std::remove(rotationPoints.begin(), rotationPoints.end(), point), rotationPoints.end());
+	}
+
+	bool Snake::CanRotate()
+	{
+		return canRotate;
+	}
+
+	void Snake::CanRotate(bool can)
+	{
+		canRotate = can;
 	}

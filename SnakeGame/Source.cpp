@@ -43,23 +43,25 @@ void ProcessInput()
 		if (state[SDL_SCANCODE_ESCAPE]) {
 			isRunning = false;
 		}
-		if ((state[SDL_SCANCODE_UP] || state[SDL_SCANCODE_W]) && player.GetDirection() != DOWN)
+		if (player.CanRotate())
 		{
-			player.ChangeDirection(Direction::UP);
+			if ((state[SDL_SCANCODE_UP] || state[SDL_SCANCODE_W]) && player.GetDirection() != DOWN)
+			{
+				player.ChangeDirection(Direction::UP);
+			}
+			if ((state[SDL_SCANCODE_DOWN] || state[SDL_SCANCODE_S]) && player.GetDirection() != UP)
+			{
+				player.ChangeDirection(Direction::DOWN);
+			}
+			if ((state[SDL_SCANCODE_LEFT] || state[SDL_SCANCODE_A]) && player.GetDirection() != RIGHT)
+			{
+				player.ChangeDirection(Direction::LEFT);
+			}
+			if ((state[SDL_SCANCODE_RIGHT] || state[SDL_SCANCODE_D]) && player.GetDirection() != LEFT)
+			{
+				player.ChangeDirection(Direction::RIGHT);
+			}
 		}
-		if ((state[SDL_SCANCODE_DOWN] || state[SDL_SCANCODE_S]) && player.GetDirection() != UP)
-		{
-			player.ChangeDirection(Direction::DOWN);
-		}
-		if ((state[SDL_SCANCODE_LEFT] || state[SDL_SCANCODE_A]) && player.GetDirection() != RIGHT)
-		{
-			player.ChangeDirection(Direction::LEFT);
-		}
-		if ((state[SDL_SCANCODE_RIGHT] || state[SDL_SCANCODE_D]) && player.GetDirection() != LEFT)
-		{
-			player.ChangeDirection(Direction::RIGHT);
-		}
-
 	}
 }
 
@@ -89,35 +91,39 @@ void Update()
 				if (player.GetSegment(i).Equal(point))
 				{
 					player.RotateSegment(i, point.rotation);
-
+					if (i == 1)
+					{
+						player.CanRotate(true);
+					}
+					if (i == player.GetSegmentsCount() - 1)
+					{
+						player.RemoveRotationPoint(point);
+					}
 				}
 
-				if (i == player.GetSegmentsCount() - 1)
-				{
-					player.RemoveRotationPoint(point);
-				}
+
 			}
 		}
 		Transform2D newPos = player.GetSegment(i);
 		switch (newPos.rotation)
 		{
 		case UP:
-			newPos.y--;
+			--newPos.y;
 			if (newPos.y < 0)
 				newPos.y = SCREEN_HEIGHT;
 			break;
 		case DOWN:
-			newPos.y++;
+			++newPos.y;
 			if (newPos.y > SCREEN_HEIGHT)
 				newPos.y = 0;
 			break;
 		case LEFT:
-			newPos.x--;
+			--newPos.x;
 			if (newPos.x < 0)
 				newPos.x = SCREEN_WIDTH;
 			break;
 		case RIGHT:
-			newPos.x++;
+			++newPos.x;
 			if (newPos.x > SCREEN_WIDTH)
 				newPos.x = 0;
 			break;
