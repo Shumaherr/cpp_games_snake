@@ -12,7 +12,9 @@ public:
 	Transform2D GetSegment(int n);
 	void MoveSegment(int n, Transform2D newPos);
 	Direction GetDirection();
-	void RotateSegment(int i);
+	void RotateSegment(int i, Direction dir);
+	std::vector<Transform2D> GetRotationPoints();
+	void RemoveRotationPoint(Transform2D& point);
 private:
 	Direction direction;
 	std::vector<Transform2D> segments;

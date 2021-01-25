@@ -27,7 +27,7 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 	{
 		this->direction = dir;
 
-		this->rotationPoints.push_back(Transform2D{ this->position.x, this->position.y, dir });
+		this->rotationPoints.push_back(Transform2D{ this->GetSegment(0).x, this->GetSegment(0).y, dir });
 		this->segments[0].rotation = dir;
 	}
 	int Snake::GetSegmentsCount()
@@ -56,7 +56,17 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 		return this->direction;
 	}
 
-	void Snake::RotateSegment(int i)
+	void Snake::RotateSegment(int i, Direction dir)
 	{
-		this->segments[i].rotation = this->direction;
+		this->segments[i].rotation = dir;
+	}
+
+	std::vector<Transform2D> Snake::GetRotationPoints()
+	{
+		return this->rotationPoints;
+	}
+
+	void Snake::RemoveRotationPoint(Transform2D point)
+	{
+		this->rotationPoints.erase(std::remove(this->rotationPoints.begin(), this->rotationPoints.end(), point), this->rotationPoints.end());
 	}

@@ -67,7 +67,7 @@ void Update()
 {
 	for (int i = 1; i < player.GetSegmentsCount(); i++)
 	{
-		if (player.GetSegment(i).rotation != player.GetDirection())
+		/*if (player.GetSegment(i).rotation != player.GetDirection())
 		{
 			if (((player.GetDirection() == UP || player.GetDirection() == DOWN) && player.GetSegment(i).x == player.GetSegment(i - 1).x) ||
 				((player.GetDirection() == LEFT || player.GetDirection() == RIGHT) && player.GetSegment(i).y == player.GetSegment(i - 1).y))
@@ -76,10 +76,28 @@ void Update()
 				break;
 			}
 				
-		}
+		}*/
+		
+			
 	}
 	for (int i = 0; i < player.GetSegmentsCount(); i++)
 	{
+		if (!player.GetRotationPoints().empty())
+		{
+			for (Transform2D point : player.GetRotationPoints())
+			{
+				if (player.GetSegment(i).Equal(point))
+				{
+					player.RotateSegment(i, point.rotation);
+
+				}
+
+				if (i == player.GetSegmentsCount() - 1)
+				{
+					player.RemoveRotationPoint(point);
+				}
+			}
+		}
 		Transform2D newPos = player.GetSegment(i);
 		switch (newPos.rotation)
 		{

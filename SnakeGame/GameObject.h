@@ -13,7 +13,8 @@ struct Transform2D
 {
 	int x, y;
 	Direction rotation;
-
+public:
+	bool Equal(const Transform2D right);
 };
 class GameObject {
 public:

@@ -17,4 +17,14 @@ GameObject::GameObject(int x, int y)
 		return this->position;
 	}
 		
-	
+	bool Transform2D::Equal(const Transform2D right)
+	{	
+			if (this->x == right.x && this->y == right.y)
+			{
+				return true;
+			}
+			return false;		
+	}
+	inline bool operator==(const Transform2D& left, const Transform2D& right) {
+		return (left.x == right.x) && (left.y == right.y);
+	}
