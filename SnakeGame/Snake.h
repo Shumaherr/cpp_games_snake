@@ -9,7 +9,7 @@ public:
 	void ChangeDirection(Direction dir);
 	int GetSegmentsCount();
 	void AddSegment();
-	Transform2D GetSegment(int n);
+	Transform2D* GetSegment(int n);
 	void MoveSegment(int n, Transform2D newPos);
 	Direction GetDirection();
 	void RotateSegment(int i, Direction dir);

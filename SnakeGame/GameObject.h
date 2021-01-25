@@ -14,7 +14,9 @@ struct Transform2D
 	int x, y;
 	Direction rotation;
 public:
-	bool Equal(const Transform2D right);
+	Transform2D(int x, int y, Direction dir) :x(x), y(y), rotation(dir) {}
+	Transform2D(int x, int y) :x(x), y(y) {}
+	Transform2D(){}
 };
 class GameObject {
 public:

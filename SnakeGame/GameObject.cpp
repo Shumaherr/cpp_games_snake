@@ -16,12 +16,3 @@ GameObject::GameObject(int x, int y)
 		position.y += deltaMove.y;
 		return position;
 	}
-		
-	bool Transform2D::Equal(const Transform2D right)
-	{	
-			if (this->x == right.x && this->y == right.y)
-			{
-				return true;
-			}
-			return false;		
-	}

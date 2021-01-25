@@ -27,7 +27,7 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 	void Snake::ChangeDirection(Direction dir)
 	{
 		direction = dir;
-		rotationPoints.push_back(Transform2D{ GetSegment(0).x, GetSegment(0).y, dir });
+		rotationPoints.push_back(Transform2D{ GetSegment(0)->x, GetSegment(0)->y, dir });
 		segments[0].rotation = dir;
 		canRotate = false;
 	}
@@ -38,13 +38,12 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 
 	void Snake::AddSegment()
 	{
-		Transform2D newP = { segments[segments.size() - 1].x + 2 * segmentRadius, segments[segments.size() - 1].y };
-		segments.push_back(newP);
+		segments.emplace_back(segments[segments.size() - 1].x + 2 * segmentRadius, segments[segments.size() - 1].y);
 	}
 
-	Transform2D Snake::GetSegment(int n)
+	Transform2D* Snake::GetSegment(int n)
 	{
-		return segments[n];
+		return &segments[n];
 	}
 
 	void Snake::MoveSegment(int n, Transform2D newPos)

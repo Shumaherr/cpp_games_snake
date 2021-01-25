@@ -88,7 +88,7 @@ void Update()
 		{
 			for (Transform2D point : player.GetRotationPoints())
 			{
-				if (player.GetSegment(i).Equal(point))
+				if (*player.GetSegment(i) == point)
 				{
 					player.RotateSegment(i, point.rotation);
 					if (i == 1)
@@ -104,7 +104,7 @@ void Update()
 
 			}
 		}
-		Transform2D newPos = player.GetSegment(i);
+		Transform2D newPos = *player.GetSegment(i);
 		switch (newPos.rotation)
 		{
 		case UP:
@@ -142,8 +142,8 @@ void Render()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	for (int i = 0; i < player.GetSegmentsCount(); i++)
 	{
-		DrawCircle(renderer, player.GetSegment(i).x, player.GetSegment(i).y, SEGMENT_RADIUS);
-		SDL_RenderDrawPoint(renderer, player.GetSegment(i).x, player.GetSegment(i).y);
+		DrawCircle(renderer, player.GetSegment(i)->x, player.GetSegment(i)->y, SEGMENT_RADIUS);
+		SDL_RenderDrawPoint(renderer, player.GetSegment(i)->x, player.GetSegment(i)->y);
 	}
 	SDL_RenderPresent(renderer);
 }
