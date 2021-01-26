@@ -38,3 +38,72 @@ void DrawCircle(SDL_Renderer * renderer, int32_t centreX, int32_t centreY, int32
 	}
 
 }
+
+void FilledCircle(SDL_Renderer *renderer, int cx, int cy, int radius, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+{
+	// Note that there is more to altering the bitrate of this 
+	// method than just changing this value.  See how pixels are
+	// altered at the following web page for tips:
+	//   http://www.libsdl.org/intro.en/usingvideo.html
+	static const int BPP = 4;
+
+	//double ra = (double)radius;
+
+	for (double dy = 1; dy <= radius; dy += 1.0)
+	{
+		// This loop is unrolled a bit, only iterating through half of the
+		// height of the circle.  The result is used to draw a scan line and
+		// its mirror image below it.
+
+		// The following formula has been simplified from our original.  We
+		// are using half of the width of the circle because we are provided
+		// with a center and we need left/right coordinates.
+
+		double dx = floor(sqrt((2.0 * radius * dy) - (dy * dy)));
+		int x = cx - dx;
+		SDL_SetRenderDrawColor(renderer, r, g, b, a);
+		SDL_RenderDrawLine(renderer, cx - dx, cy + dy - radius, cx + dx, cy + dy - radius);
+		SDL_RenderDrawLine(renderer, cx - dx, cy - dy + radius, cx + dx, cy - dy + radius);
+
+		// Grab a pointer to the left-most pixel for each half of the circle
+		/*Uint8 *target_pixel_a = (Uint8 *)surface->pixels + ((int)(cy + r - dy)) * surface->pitch + x * BPP;
+		Uint8 *target_pixel_b = (Uint8 *)surface->pixels + ((int)(cy - r + dy)) * surface->pitch + x * BPP;
+		for (; x <= cx + dx; x++)
+		{
+			*(Uint32 *)target_pixel_a = pixel;
+			*(Uint32 *)target_pixel_b = pixel;
+			target_pixel_a += BPP;
+			target_pixel_b += BPP;
+		}*/
+		/*
+		// sleep for debug
+		SDL_RenderPresent(gRenderer);
+		std::this_thread::sleep_for(std::chrono::milliseconds{ 100 });
+		*/
+	}
+}
+
+bool IsCollide(int x10, int y10, int r1,//координаты центра и радиус
+	int x20, int y20, int r2)
+{
+	double x0, y0;//координаты точки пересечения всех линий
+
+	double d;//расстояние между центрами окружностей
+	double a;//расстояние от r1 до точки пересечения всех линий
+	double h;//расстояние от точки пересеч окружностей до точки пересеч всех линий
+
+	d = sqrt(pow(abs(x10 - x20), 2) + pow(abs(y10 - y20), 2));
+	if (d > r1 + r2) return false; //окружности не пересекаются
+	return true;
+	/*a = (r1*r1 - r2 * r2 + d * d) / (2 * d);
+	h = sqrt(pow(r1, 2) - pow(a, 2));
+
+
+	x0 = x10 + a * (x20 - x10) / d;
+	y0 = y10 + a * (y20 - y10) / d;
+
+	if (a == r1) return 1; //окружности соприкасаются
+
+
+	return 2;//окружности пересекаются*/
+}

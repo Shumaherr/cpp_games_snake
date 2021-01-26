@@ -23,6 +23,7 @@ public:
 	GameObject();
 	GameObject(int x, int y);
 	Transform2D Move(Transform2D deltaMove);
+	Transform2D* GetPosition();
 protected:
 	Transform2D position; //Position of object
 };

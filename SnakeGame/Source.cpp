@@ -1,7 +1,11 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <random>
 #include "SDL.h"
 #include "Snake.h"
 #include "Utils.h"
+#include "Fruit.h"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
@@ -10,6 +14,16 @@ bool isRunning;
 Snake player;
 SDL_Renderer* renderer;
 SDL_Window* window;
+Fruit* fruit; //TODO make a vector of fruits
+
+void CreateFruit()
+{
+	std::random_device rd;
+	std::mt19937 mt(rd());
+	std::uniform_real_distribution<float> distX(0, SCREEN_WIDTH);
+	std::uniform_real_distribution<float> distY(0, SCREEN_HEIGHT);
+	fruit = &Fruit((int) distX(mt), (int) distY(mt));
+}
 
 void Init()
 {
@@ -26,6 +40,12 @@ void Init()
 			-1,
 			SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	player = Snake(0, 0, SEGMENT_RADIUS);
+	CreateFruit();
+}
+
+bool CheckCollision()
+{
+
 }
 
 void ProcessInput()
@@ -67,21 +87,6 @@ void ProcessInput()
 
 void Update()
 {
-	for (int i = 1; i < player.GetSegmentsCount(); i++)
-	{
-		/*if (player.GetSegment(i).rotation != player.GetDirection())
-		{
-			if (((player.GetDirection() == UP || player.GetDirection() == DOWN) && player.GetSegment(i).x == player.GetSegment(i - 1).x) ||
-				((player.GetDirection() == LEFT || player.GetDirection() == RIGHT) && player.GetSegment(i).y == player.GetSegment(i - 1).y))
-			{
-				player.RotateSegment(i);
-				break;
-			}
-				
-		}*/
-		
-			
-	}
 	for (int i = 0; i < player.GetSegmentsCount(); i++)
 	{
 		if (!player.GetRotationPoints().empty())
@@ -132,6 +137,15 @@ void Update()
 		}
 		player.MoveSegment(i, newPos);
 	}
+
+	bool test = IsCollide(player.GetPosition()->x, player.GetPosition()->y, player.GetSegmentRadius(),
+		fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius());
+	if (IsCollide(player.GetPosition()->x, player.GetPosition()->y, player.GetSegmentRadius(), 
+		fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius()))
+	{
+		//player.AddSegment();
+		//CreateFruit();
+	}
 }
 
 void Render()
@@ -145,13 +159,15 @@ void Render()
 		DrawCircle(renderer, player.GetSegment(i)->x, player.GetSegment(i)->y, SEGMENT_RADIUS);
 		SDL_RenderDrawPoint(renderer, player.GetSegment(i)->x, player.GetSegment(i)->y);
 	}
+	//Draw Fruits
+	FilledCircle(renderer, fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius(), 255, 0, 0, 255);
 	SDL_RenderPresent(renderer);
 }
 
 int main(int argc, char* argv[])
 {
 	Init();
-
+	//srand((unsigned)time(0));
 	// Check that the window was successfully created
 	if (!window) {
 		// In the case that the window could not be made...

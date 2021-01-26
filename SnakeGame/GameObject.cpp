@@ -16,3 +16,8 @@ GameObject::GameObject(int x, int y)
 		position.y += deltaMove.y;
 		return position;
 	}
+
+	Transform2D* GameObject::GetPosition()
+	{
+		return &position;
+	}

@@ -80,3 +80,8 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 	{
 		canRotate = can;
 	}
+
+	int Snake::GetSegmentRadius()
+	{
+		return segmentRadius;
+	}

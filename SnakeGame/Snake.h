@@ -17,6 +17,7 @@ public:
 	void RemoveRotationPoint(Transform2D& point);
 	bool CanRotate();
 	void CanRotate(bool can);
+	int GetSegmentRadius();
 private:
 	Direction direction;
 	std::vector<Transform2D> segments;
