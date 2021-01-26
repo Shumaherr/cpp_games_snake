@@ -43,10 +43,6 @@ void Init()
 	CreateFruit();
 }
 
-bool CheckCollision()
-{
-
-}
 
 void ProcessInput()
 {
@@ -138,12 +134,11 @@ void Update()
 		player.MoveSegment(i, newPos);
 	}
 
-	bool test = IsCollide(player.GetPosition()->x, player.GetPosition()->y, player.GetSegmentRadius(),
-		fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius());
-	if (IsCollide(player.GetPosition()->x, player.GetPosition()->y, player.GetSegmentRadius(), 
-		fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius()))
+	if (IsCollide(player.GetSegment(0)->x, player.GetSegment(0)->y, player.GetSegmentRadius(), fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius() && fruit->CanCollide()))
 	{
+		std::cout << "Collide!"; //For tests
 		//player.AddSegment();
+		
 		//CreateFruit();
 	}
 }

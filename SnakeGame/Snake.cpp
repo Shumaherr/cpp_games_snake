@@ -8,6 +8,7 @@ Snake::Snake()
 
 Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 		direction = Direction::LEFT;
+		this->segmentRadius = segmentRadius;
 		Transform2D p1 = { 150,150 }; //TODO Refactor this
 		p1.rotation = LEFT;
 		Transform2D p2 = { 150 + 2 * segmentRadius, 150 };

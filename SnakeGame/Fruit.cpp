@@ -9,3 +9,8 @@ int Fruit::GetFruitRadius()
 {
 	return radius;
 }
+
+bool Fruit::CanCollide()
+{
+	return canColide;
+}

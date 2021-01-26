@@ -18,11 +18,14 @@ public:
 		//type = static_cast<Fruits>(rand() % LAST);
 		type = APPLE;
 		radius = 10;
+		canColide = true;
 	}
 	Fruits GetFruitType();
 	int GetFruitRadius();
+	bool CanCollide();
 private:
 	Fruits type;
 	int radius;
+	bool canColide;
 };
 
