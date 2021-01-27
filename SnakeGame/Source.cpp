@@ -22,7 +22,7 @@ void CreateFruit()
 	std::mt19937 mt(rd());
 	std::uniform_real_distribution<float> distX(0, SCREEN_WIDTH);
 	std::uniform_real_distribution<float> distY(0, SCREEN_HEIGHT);
-	fruit = &Fruit((int) distX(mt), (int) distY(mt));
+	fruit = new Fruit((int) distX(mt), (int) distY(mt));
 }
 
 void Init()
@@ -136,10 +136,12 @@ void Update()
 
 	if (IsCollide(player.GetSegment(0)->x, player.GetSegment(0)->y, player.GetSegmentRadius(), fruit->GetPosition()->x, fruit->GetPosition()->y, fruit->GetFruitRadius() && fruit->CanCollide()))
 	{
-		std::cout << "Collide!"; //For tests
-		//player.AddSegment();
+		//std::cout << "Collide!"; //For tests
+		if (fruit)
+			delete fruit;
+		player.AddSegment();
 		
-		//CreateFruit();
+		CreateFruit();
 	}
 }
 
@@ -179,5 +181,7 @@ int main(int argc, char* argv[])
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+	if (fruit)
+		delete fruit;
 	return 0;
 }
