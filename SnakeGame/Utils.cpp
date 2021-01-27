@@ -83,12 +83,12 @@ void FilledCircle(SDL_Renderer *renderer, int cx, int cy, int radius, Uint8 r, U
 	}
 }
 
-bool IsCollide(int x10, int y10, int r1,//координаты центра и радиус
+bool IsCollide(int x10, int y10, int r1,
 	int x20, int y20, int r2)
 {
 	double d = sqrt(pow(abs(x10 - x20), 2) + pow(abs(y10 - y20), 2));
 
 	if (d > r1 + r2) 
-		return false; //окружности не пересекаются
+		return false;
 	return true;
 }
