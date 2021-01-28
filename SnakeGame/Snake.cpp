@@ -24,6 +24,7 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 		segments.push_back(p3);
 		segments.push_back(p4);
 		segments.push_back(p5);
+		canRotate = true;
 	}
 	void Snake::ChangeDirection(Direction dir)
 	{
@@ -39,7 +40,23 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 
 	void Snake::AddSegment()
 	{
-		segments.emplace_back(segments[segments.size() - 1].x + 2 * segmentRadius, segments[segments.size() - 1].y);
+		switch (segments[segments.size() - 1].rotation)
+		{
+		case UP:
+			segments.emplace_back(segments[segments.size() - 1].x , segments[segments.size() - 1].y + 2 * segmentRadius, segments[segments.size() - 1].rotation);
+			break;
+		case DOWN:
+			segments.emplace_back(segments[segments.size() - 1].x, segments[segments.size() - 1].y - 2 * segmentRadius, segments[segments.size() - 1].rotation);
+			break;
+		case LEFT:
+			segments.emplace_back(segments[segments.size() - 1].x + 2 * segmentRadius, segments[segments.size() - 1].y, segments[segments.size() - 1].rotation);
+			break;
+		case RIGHT:
+			segments.emplace_back(segments[segments.size() - 1].x - 2 * segmentRadius, segments[segments.size() - 1].y, segments[segments.size() - 1].rotation);
+			break;
+		default:
+			break;
+		}
 	}
 
 	Transform2D* Snake::GetSegment(int n)
@@ -70,6 +87,11 @@ Snake::Snake(int x, int y, int segmentRadius) : GameObject::GameObject(x,y) {
 	void Snake::RemoveRotationPoint(Transform2D& point)
 	{
 		this->rotationPoints.erase(std::remove(rotationPoints.begin(), rotationPoints.end(), point), rotationPoints.end());
+	}
+
+	void Snake::RemoveRotationPoint(int index)
+	{
+		rotationPoints.erase(rotationPoints.begin() + index);
 	}
 
 	bool Snake::CanRotate()
