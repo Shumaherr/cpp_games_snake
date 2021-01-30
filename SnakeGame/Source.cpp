@@ -113,6 +113,11 @@ void Update() {
             default:
                 break;
         }
+        if (IsCollide(player->GetSegment(0)->x, player->GetSegment(0)->y, player->GetSegmentRadius() - 3,
+                      player->GetSegment(i)->x, player->GetSegment(i)->y, player->GetSegmentRadius() - 3) && i != 0) {
+
+            std::cout << "Game over";
+        }
     }
 
     if (IsCollide(player->GetSegment(0)->x, player->GetSegment(0)->y, player->GetSegmentRadius(),
