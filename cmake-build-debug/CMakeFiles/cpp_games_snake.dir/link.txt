@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cpp_games_snake.dir/objects.a
-C:\msys64\mingw32\bin\ar.exe cr CMakeFiles\cpp_games_snake.dir/objects.a @CMakeFiles\cpp_games_snake.dir\objects1.rsp
-C:\msys64\mingw32\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\cpp_games_snake.dir/objects.a -Wl,--no-whole-archive  -o cpp_games_snake.exe -Wl,--out-implib,libcpp_games_snake.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cpp_games_snake.dir\linklibs.rsp

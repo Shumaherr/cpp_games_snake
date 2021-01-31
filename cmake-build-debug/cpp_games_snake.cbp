@@ -4,371 +4,375 @@
 	<Project>
 		<Option title="cpp_games_snake"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug"/>
+				<Option working_dir="E:/Work/GameDev/cpp_games_snake/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug"/>
+				<Option working_dir="E:/Work/GameDev/cpp_games_snake/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cpp_games_snake">
-				<Option output="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/cpp_games_snake.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug"/>
+				<Option output="E:/Work/GameDev/cpp_games_snake/cmake-build-debug/cpp_games_snake.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Work/GameDev/cpp_games_snake/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include"/>
-					<Add directory="C:/PROGS/Projects/cpp_games_snake/SnakeGame"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/i686-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include"/>
+					<Add directory="E:/Work/GameDev/cpp_games_snake/SnakeGame"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp_games_snake"/>
-					<CompileFile command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 cpp_games_snake"/>
+					<CompileFile command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cpp_games_snake/fast">
-				<Option output="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/cpp_games_snake.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug"/>
+				<Option output="E:/Work/GameDev/cpp_games_snake/cmake-build-debug/cpp_games_snake.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Work/GameDev/cpp_games_snake/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include"/>
-					<Add directory="C:/PROGS/Projects/cpp_games_snake/SnakeGame"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/i686-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/10.2.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include"/>
+					<Add directory="E:/Work/GameDev/cpp_games_snake/SnakeGame"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp_games_snake/fast"/>
-					<CompileFile command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 cpp_games_snake/fast"/>
+					<CompileFile command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/PROGS/Projects/cpp_games_snake/cmake-build-debug"/>
+				<Option working_dir="E:/Work/GameDev/cpp_games_snake/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw32/bin/mingw32-make.exe -f &quot;C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f E:\Work\GameDev\cpp_games_snake\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_assert.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_assert.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_atomic.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_atomic.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_audio.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_audio.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_bits.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_bits.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_blendmode.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_blendmode.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_clipboard.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_clipboard.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_android.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_android.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_iphoneos.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_iphoneos.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_macosx.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_macosx.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_minimal.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_minimal.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_pandora.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_pandora.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_psp.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_psp.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_windows.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_windows.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_winrt.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_winrt.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_config_wiz.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_config_wiz.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_copying.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_copying.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_cpuinfo.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_cpuinfo.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_egl.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_egl.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_endian.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_endian.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_error.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_error.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_events.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_events.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_filesystem.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_filesystem.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_gamecontroller.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_gamecontroller.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_gesture.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_gesture.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_haptic.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_haptic.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_hints.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_hints.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_joystick.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_joystick.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_keyboard.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_keyboard.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_keycode.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_keycode.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_loadso.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_loadso.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_log.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_log.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_main.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_main.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_messagebox.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_messagebox.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_metal.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_metal.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_mouse.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_mouse.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_mutex.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_mutex.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_name.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_name.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengl.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengl.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengl_glext.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengl_glext.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_gl2.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_gl2.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_gl2ext.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_gl2ext.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_gl2platform.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_gl2platform.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_khrplatform.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_opengles2_khrplatform.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_pixels.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_pixels.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_platform.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_platform.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_power.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_power.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_quit.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_quit.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_rect.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_rect.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_render.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_render.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_revision.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_revision.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_rwops.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_rwops.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_scancode.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_scancode.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_sensor.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_sensor.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_shape.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_shape.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_stdinc.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_stdinc.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_surface.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_surface.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_system.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_system.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_syswm.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_syswm.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_assert.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_assert.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_common.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_common.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_compare.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_compare.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_crc32.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_crc32.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_font.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_font.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_fuzzer.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_fuzzer.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_harness.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_harness.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_images.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_images.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_log.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_log.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_md5.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_md5.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_memory.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_memory.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_test_random.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_test_random.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_thread.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_thread.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_timer.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_timer.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_touch.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_touch.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_types.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_types.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_version.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_version.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_video.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_video.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/SDL_vulkan.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/SDL_vulkan.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/begin_code.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/begin_code.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/close_code.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/close_code.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Fruit.cpp">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Fruit.cpp">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Fruit.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Fruit.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/GameObject.cpp">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/GameManager.cpp">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/GameObject.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/GameManager.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Snake.cpp">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/GameObject.cpp">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Snake.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/GameObject.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Source.cpp">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Snake.cpp">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Source.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Snake.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Utils.cpp">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Source.cpp">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/SnakeGame/Utils.h">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Source.h">
 			<Option target="cpp_games_snake"/>
 		</Unit>
-		<Unit filename="C:/PROGS/Projects/cpp_games_snake/CMakeLists.txt">
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Utils.cpp">
+			<Option target="cpp_games_snake"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/SnakeGame/Utils.h">
+			<Option target="cpp_games_snake"/>
+		</Unit>
+		<Unit filename="E:/Work/GameDev/cpp_games_snake/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

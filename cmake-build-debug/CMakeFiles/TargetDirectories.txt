@@ -1,3 +1,3 @@
-C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/CMakeFiles/cpp_games_snake.dir
-C:/PROGS/Projects/cpp_games_snake/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Work/GameDev/cpp_games_snake/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/Work/GameDev/cpp_games_snake/cmake-build-debug/CMakeFiles/cpp_games_snake.dir
+E:/Work/GameDev/cpp_games_snake/cmake-build-debug/CMakeFiles/edit_cache.dir

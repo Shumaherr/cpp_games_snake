@@ -6,6 +6,7 @@
 #include "Snake.h"
 #include "Utils.h"
 #include "Fruit.h"
+#include "GameManager.h"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
@@ -15,7 +16,7 @@ Snake *player;
 SDL_Renderer *renderer;
 SDL_Window *window;
 Fruit *fruit; //TODO make a vector of fruits
-
+GameManager gameManager;
 void CreateFruit() {
     std::random_device rd;
     std::mt19937 mt(rd());
@@ -39,6 +40,7 @@ void Init() {
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     player = new Snake(0, 0, SEGMENT_RADIUS);
     CreateFruit();
+    gameManager.StartGame();
 }
 
 
@@ -72,6 +74,8 @@ void ProcessInput() {
 }
 
 void Update() {
+    if(gameManager.isGameOver())
+        return;
     for (int i = 0; i < player->GetSegmentsCount(); i++) {
         if (!player->GetRotationPoints().empty()) {
             for (int j = 0; j < player->GetRotationPoints().size(); j++) {
@@ -116,7 +120,7 @@ void Update() {
         if (IsCollide(player->GetSegment(0)->x, player->GetSegment(0)->y, player->GetSegmentRadius() - 3,
                       player->GetSegment(i)->x, player->GetSegment(i)->y, player->GetSegmentRadius() - 3) && i != 0) {
 
-            std::cout << "Game over";
+            gameManager.GameOver();
         }
     }
 

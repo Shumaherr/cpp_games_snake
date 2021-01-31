@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.16)
 project(cpp_games_snake)
 
 set(CMAKE_CXX_STANDARD 14)
-set(SDL2_INCLUDE_DIR C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/include/)
-set(SDL2_LIB_DIR C:/PROGS/Projects/cpp_games_snake/SDL2-2.0.12/lib/x86)
+set(SDL2_INCLUDE_DIR E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/include/)
+set(SDL2_LIB_DIR E:/Work/GameDev/cpp_games_snake/SDL2-2.0.12/lib/x86)
 
 include_directories(${SDL2_INCLUDE_DIR})
 link_directories(${SDL2_LIB_DIR})
@@ -103,5 +103,5 @@ add_executable(cpp_games_snake
         SnakeGame/Source.cpp
         SnakeGame/Source.h
         SnakeGame/Utils.cpp
-        SnakeGame/Utils.h)
+        SnakeGame/Utils.h SnakeGame/GameManager.h SnakeGame/GameManager.cpp)
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
