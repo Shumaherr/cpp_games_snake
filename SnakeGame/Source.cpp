@@ -16,13 +16,9 @@ Snake *player;
 SDL_Renderer *renderer;
 SDL_Window *window;
 Fruit *fruit; //TODO make a vector of fruits
-GameManager gameManager;
+GameManager *gameManager;
 void CreateFruit() {
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_real_distribution<float> distX(0, SCREEN_WIDTH);
-    std::uniform_real_distribution<float> distY(0, SCREEN_HEIGHT);
-    fruit = new Fruit((int) distX(mt), (int) distY(mt));
+    fruit = new Fruit(getRandomNumber(0, SCREEN_WIDTH), getRandomNumber(0, SCREEN_HEIGHT));
 }
 
 void Init() {
@@ -38,9 +34,10 @@ void Init() {
     renderer = SDL_CreateRenderer(window,
                                   -1,
                                   SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    gameManager = new GameManager();
     player = new Snake(0, 0, SEGMENT_RADIUS);
     CreateFruit();
-    gameManager.StartGame();
+    gameManager->StartGame();
 }
 
 
@@ -74,7 +71,7 @@ void ProcessInput() {
 }
 
 void Update() {
-    if(gameManager.isGameOver())
+    if(gameManager->isGameOver())
         return;
     for (int i = 0; i < player->GetSegmentsCount(); i++) {
         if (!player->GetRotationPoints().empty()) {
@@ -120,7 +117,7 @@ void Update() {
         if (IsCollide(player->GetSegment(0)->x, player->GetSegment(0)->y, player->GetSegmentRadius() - 3,
                       player->GetSegment(i)->x, player->GetSegment(i)->y, player->GetSegmentRadius() - 3) && i != 0) {
 
-            gameManager.GameOver();
+            gameManager->GameOver();
         }
     }
 
